@@ -78,5 +78,31 @@ namespace chama
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txbEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbTelefone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

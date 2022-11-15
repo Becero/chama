@@ -43,6 +43,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.rbtMasculino = new System.Windows.Forms.RadioButton();
+            this.rbtFeminino = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,19 +69,21 @@
             // 
             // txbTelefone
             // 
-            this.txbTelefone.Location = new System.Drawing.Point(13, 94);
+            this.txbTelefone.Location = new System.Drawing.Point(13, 155);
             this.txbTelefone.Name = "txbTelefone";
             this.txbTelefone.Size = new System.Drawing.Size(125, 20);
             this.txbTelefone.TabIndex = 5;
             this.txbTelefone.Text = "Telefone";
+            this.txbTelefone.TextChanged += new System.EventHandler(this.txbTelefone_TextChanged);
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(13, 62);
+            this.txbEmail.Location = new System.Drawing.Point(13, 189);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(141, 20);
             this.txbEmail.TabIndex = 6;
             this.txbEmail.Text = "Email";
+            this.txbEmail.TextChanged += new System.EventHandler(this.txbEmail_TextChanged);
             // 
             // fileSystemWatcher1
             // 
@@ -85,6 +92,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.vScrollBar1);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.rbtFeminino);
+            this.groupBox2.Controls.Add(this.rbtMasculino);
             this.groupBox2.Controls.Add(this.txbSenha);
             this.groupBox2.Controls.Add(this.txbUsuario);
             this.groupBox2.Controls.Add(this.txbEmail);
@@ -100,7 +112,7 @@
             // 
             // txbSenha
             // 
-            this.txbSenha.Location = new System.Drawing.Point(13, 172);
+            this.txbSenha.Location = new System.Drawing.Point(13, 259);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.Size = new System.Drawing.Size(106, 20);
             this.txbSenha.TabIndex = 10;
@@ -108,7 +120,7 @@
             // 
             // txbUsuario
             // 
-            this.txbUsuario.Location = new System.Drawing.Point(13, 135);
+            this.txbUsuario.Location = new System.Drawing.Point(13, 223);
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.Size = new System.Drawing.Size(106, 20);
             this.txbUsuario.TabIndex = 9;
@@ -162,16 +174,67 @@
             this.button4.TabIndex = 19;
             this.button4.Text = "☐";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Enabled = false;
             this.btnVoltar.Location = new System.Drawing.Point(18, 6);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(49, 23);
             this.btnVoltar.TabIndex = 18;
             this.btnVoltar.Text = "◀";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // rbtMasculino
+            // 
+            this.rbtMasculino.AutoSize = true;
+            this.rbtMasculino.Location = new System.Drawing.Point(19, 73);
+            this.rbtMasculino.Name = "rbtMasculino";
+            this.rbtMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbtMasculino.TabIndex = 11;
+            this.rbtMasculino.TabStop = true;
+            this.rbtMasculino.Text = "Masculino";
+            this.rbtMasculino.UseVisualStyleBackColor = true;
+            // 
+            // rbtFeminino
+            // 
+            this.rbtFeminino.AutoSize = true;
+            this.rbtFeminino.Location = new System.Drawing.Point(19, 96);
+            this.rbtFeminino.Name = "rbtFeminino";
+            this.rbtFeminino.Size = new System.Drawing.Size(67, 17);
+            this.rbtFeminino.TabIndex = 12;
+            this.rbtFeminino.TabStop = true;
+            this.rbtFeminino.Text = "Feminino";
+            this.rbtFeminino.UseVisualStyleBackColor = true;
+            this.rbtFeminino.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(19, 119);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(51, 17);
+            this.radioButton3.TabIndex = 13;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Outro";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Genero:";
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(207, 10);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 307);
+            this.vScrollBar1.TabIndex = 15;
             // 
             // Cadastro
             // 
@@ -186,6 +249,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
@@ -211,5 +275,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbtFeminino;
+        private System.Windows.Forms.RadioButton rbtMasculino;
     }
 }

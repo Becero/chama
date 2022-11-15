@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace chama
 {
-    public partial class Form1 : Form
+    public partial class CadastroEmprego : Form
     {
-        public Form1()
+        public CadastroEmprego()
         {
             InitializeComponent();
         }
@@ -22,20 +22,14 @@ namespace chama
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFechar_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
-            Cadastro cadastro = new Cadastro();
-            cadastro.Show();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

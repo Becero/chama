@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProcurar = new System.Windows.Forms.Button();
+            this.btnOferecer = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.perfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notificaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.segurançaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,70 +44,71 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnProcurar
             // 
-            this.button1.Location = new System.Drawing.Point(42, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Procurar Emprego";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnProcurar.Location = new System.Drawing.Point(42, 260);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(160, 23);
+            this.btnProcurar.TabIndex = 0;
+            this.btnProcurar.Text = "Procurar Emprego";
+            this.btnProcurar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnOferecer
             // 
-            this.button2.Location = new System.Drawing.Point(42, 301);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Oferecer Emprego";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOferecer.Location = new System.Drawing.Point(42, 301);
+            this.btnOferecer.Name = "btnOferecer";
+            this.btnOferecer.Size = new System.Drawing.Size(160, 23);
+            this.btnOferecer.TabIndex = 1;
+            this.btnOferecer.Text = "Oferecer Emprego";
+            this.btnOferecer.UseVisualStyleBackColor = true;
+            this.btnOferecer.Click += new System.EventHandler(this.button2_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.perfilToolStripMenuItem,
+            this.btnMenu,
             this.toolStripMenuItem1});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(186, 12);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(56, 23);
+            this.menuStrip1.Size = new System.Drawing.Size(178, 23);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // perfilToolStripMenuItem
+            // btnMenu
             // 
-            this.perfilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userToolStripMenuItem,
             this.notificaçõesToolStripMenuItem,
             this.segurançaToolStripMenuItem,
             this.temaToolStripMenuItem,
             this.sairToolStripMenuItem,
             this.ajudaToolStripMenuItem});
-            this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(28, 19);
-            this.perfilToolStripMenuItem.Text = "...";
-            this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(30, 19);
+            this.btnMenu.Text = "☰";
+            this.btnMenu.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // userToolStripMenuItem
             // 
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.userToolStripMenuItem.Text = "Perfil";
             this.userToolStripMenuItem.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
             // 
             // notificaçõesToolStripMenuItem
             // 
             this.notificaçõesToolStripMenuItem.Name = "notificaçõesToolStripMenuItem";
-            this.notificaçõesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.notificaçõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.notificaçõesToolStripMenuItem.Text = "Notificações";
             // 
             // segurançaToolStripMenuItem
@@ -115,32 +116,32 @@
             this.segurançaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.relatorioToolStripMenuItem});
             this.segurançaToolStripMenuItem.Name = "segurançaToolStripMenuItem";
-            this.segurançaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.segurançaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.segurançaToolStripMenuItem.Text = "Segurança";
             // 
             // relatorioToolStripMenuItem
             // 
             this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
-            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.relatorioToolStripMenuItem.Text = "Relatorio";
             // 
             // temaToolStripMenuItem
             // 
             this.temaToolStripMenuItem.Name = "temaToolStripMenuItem";
-            this.temaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.temaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.temaToolStripMenuItem.Text = "Tema";
             this.temaToolStripMenuItem.Click += new System.EventHandler(this.temaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // toolStripMenuItem1
@@ -163,7 +164,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Controls.Add(this.btnVoltar);
             this.panel1.Location = new System.Drawing.Point(-1, 376);
             this.panel1.Name = "panel1";
@@ -179,24 +180,25 @@
             this.button3.Text = "●";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnFechar
             // 
-            this.button4.Location = new System.Drawing.Point(97, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(49, 23);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "☐";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFechar.Location = new System.Drawing.Point(97, 6);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(49, 23);
+            this.btnFechar.TabIndex = 19;
+            this.btnFechar.Text = "☐";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Enabled = false;
             this.btnVoltar.Location = new System.Drawing.Point(18, 6);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(49, 23);
             this.btnVoltar.TabIndex = 18;
             this.btnVoltar.Text = "◀";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // TelaPrincipal
             // 
@@ -205,10 +207,11 @@
             this.ClientSize = new System.Drawing.Size(244, 411);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOferecer);
+            this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.menuStrip1);
             this.Name = "TelaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaPrincipal";
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -222,10 +225,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProcurar;
+        private System.Windows.Forms.Button btnOferecer;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem perfilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnMenu;
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -237,7 +240,7 @@
         private System.Windows.Forms.ToolStripMenuItem temaToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnVoltar;
     }
 }

@@ -41,5 +41,24 @@ namespace chama
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {                    
+              this.Close();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            CadastroEmprego cadastro2 = new CadastroEmprego();
+            cadastro2.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

@@ -23,12 +23,13 @@ namespace chama.Modelo
         {
             Cmd.Connection = Con.ReturnConnection();
             Cmd.CommandText = @"INSERT INTO USUARIO VALUES (@nome, @tel, @email, @usuario, @senha)";
-
+            //testecomentario
             Cmd.Parameters.AddWithValue("@nome", usuario.Nome);
             Cmd.Parameters.AddWithValue("@tel", usuario.Telefone);
             Cmd.Parameters.AddWithValue("@email", usuario.Email);
             Cmd.Parameters.AddWithValue("@usuario", usuario.UsuarioSis);
-            Cmd.Parameters.AddWithValue("@senha", usuario.Senha);           
+            Cmd.Parameters.AddWithValue("@senha", usuario.Senha);
+            // Cmd.Parameters.AddWithValue("@genero", usuario.Genero);   
             try
             {
                 //Executa query definida acima.
@@ -43,35 +44,66 @@ namespace chama.Modelo
                 Con.CloseConnection();
             }
         }
-       /* public List<Usuario> ListarTodosUsuarios()
-        {
-            Cmd.Connection = Con.ReturnConnection();
-            Cmd.CommandText = "SELECT * FROM Usuarios";
 
-            List<Usuario> listaDeUsuarios = new List<Usuario>(); //Instancio a list com o tamanho padrão.
+        public bool Devolver(string login, string senha)//passando uma string login e senha
+        {
             try
             {
+                //conexao com o banco de dados & 
+                Cmd.Connection = Con.ReturnConnection();//conexao
+                Cmd.CommandText = "Select * From USUARIO WHERE Email = @login OR Usuario = @login AND Senha = @senha ";
+                Cmd.Parameters.AddWithValue("@login", login);//passagem de parametro
+                Cmd.Parameters.AddWithValue("@senha", senha);//passaem de parametro
                 SqlDataReader rd = Cmd.ExecuteReader();
 
-                //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
-                while (rd.Read())
+                if (rd.Read())
                 {
-                    Usuario usuario = new Usuario((int)rd["Id"], (string)rd["Nome"],
-                        (string)rd["Email"], (string)rd["Telefone"], (string)rd["Usuario"], (string)rd["Senha"]);
-                    listaDeUsuarios.Add(usuario);
+                    return true;
                 }
-                rd.Close();
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception err)
             {
-                throw new Exception("Erro: Problemas ao realizar leitura de usuários no banco.\n" + err.Message);
+
+                return false;
             }
             finally
             {
                 Con.CloseConnection();
             }
+        }
+        /* public List<Usuario> ListarTodosUsuarios()
+         {
+             Cmd.Connection = Con.ReturnConnection();
+             Cmd.CommandText = "SELECT * FROM Usuarios";
 
-            return listaDeUsuarios;
-        }*/
+             List<Usuario> listaDeUsuarios = new List<Usuario>(); //Instancio a list com o tamanho padrão.
+             try
+             {
+                 SqlDataReader rd = Cmd.ExecuteReader();
+
+                 //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
+                 while (rd.Read())
+                 {
+                     Usuario usuario = new Usuario((int)rd["Id"], (string)rd["Nome"],
+                         (string)rd["Email"], (string)rd["Telefone"], (string)rd["Usuario"], (string)rd["Senha"]);
+                     listaDeUsuarios.Add(usuario);
+                 }
+                 rd.Close();
+             }
+             catch (Exception err)
+             {
+                 throw new Exception("Erro: Problemas ao realizar leitura de usuários no banco.\n" + err.Message);
+             }
+             finally
+             {
+                 Con.CloseConnection();
+             }
+
+             return listaDeUsuarios;
+         }*/
     }
 }
