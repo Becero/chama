@@ -59,6 +59,12 @@
       <DependentUpon>CadastroEmprego.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexao.cs" />
+    <Compile Include="PerfilCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerfilCadastro.Designer.cs">
+      <DependentUpon>PerfilCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroEmprego.resx">
       <DependentUpon>CadastroEmprego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerfilCadastro.resx">
+      <DependentUpon>PerfilCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>

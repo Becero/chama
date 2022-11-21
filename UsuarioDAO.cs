@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace chama.Modelo
 {
@@ -45,65 +46,106 @@ namespace chama.Modelo
             }
         }
 
-        public bool Devolver(string login, string senha)//passando uma string login e senha
+        public int Devolver(string login, string senha)//passando uma string login e senha
         {
             try
             {
                 //conexao com o banco de dados & 
                 Cmd.Connection = Con.ReturnConnection();//conexao
-                Cmd.CommandText = "Select * From USUARIO WHERE Email = @login OR Usuario = @login AND Senha = @senha ";
+                Cmd.CommandText = "Select * From USUARIO WHERE Email = @login OR Usuario = @login AND Senha = @senha";
                 Cmd.Parameters.AddWithValue("@login", login);//passagem de parametro
                 Cmd.Parameters.AddWithValue("@senha", senha);//passaem de parametro
+                
+
                 SqlDataReader rd = Cmd.ExecuteReader();
 
                 if (rd.Read())
                 {
-                    return true;
+                    return (int)rd["ID"];
                 }
-                else
-                {
-                    return false;
-                }
+                return -1;
+                
             }
             catch (Exception err)
             {
 
-                return false;
+                throw new Exception(err.Message);
             }
             finally
             {
                 Con.CloseConnection();
             }
         }
-        /* public List<Usuario> ListarTodosUsuarios()
-         {
-             Cmd.Connection = Con.ReturnConnection();
-             Cmd.CommandText = "SELECT * FROM Usuarios";
+        /*public Usuario Alterar(string login, string senha)
+        {
+            try
+            {
+                Usuario usuario = null;
+                Cmd.Connection = Con.ReturnConnection();//conexao
+                Cmd.CommandText = @"Select ID,
+                Nome,
+                Email,
+                Telefone,
+                Usuario,
+                Senha
+                From USUARIO WHERE Email = @login OR Usuario = @login AND Senha = @senha";
+                Cmd.Parameters.AddWithValue("@login", login);//passagem de parametro
+                Cmd.Parameters.AddWithValue("@senha", senha);//passaem de parametro
+                SqlDataReader rd = Cmd.ExecuteReader();
 
-             List<Usuario> listaDeUsuarios = new List<Usuario>(); //Instancio a list com o tamanho padrão.
-             try
-             {
-                 SqlDataReader rd = Cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    usuario = new Usuario(, (string)rd["Nome"], (string)rd["Email"], (string)rd["Telefone"], (string)rd["Usuario"], (string)rd["Senha"]);
+                    
+                }
+                return usuario;
 
-                 //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
-                 while (rd.Read())
-                 {
-                     Usuario usuario = new Usuario((int)rd["Id"], (string)rd["Nome"],
-                         (string)rd["Email"], (string)rd["Telefone"], (string)rd["Usuario"], (string)rd["Senha"]);
-                     listaDeUsuarios.Add(usuario);
-                 }
-                 rd.Close();
-             }
-             catch (Exception err)
-             {
-                 throw new Exception("Erro: Problemas ao realizar leitura de usuários no banco.\n" + err.Message);
-             }
-             finally
-             {
-                 Con.CloseConnection();
-             }
+            }
+            catch (Exception err)
+            {
 
-             return listaDeUsuarios;
-         }*/
+                return null;
+            }
+            finally
+            {
+                Con.CloseConnection();
+            }
+
+        }*/
+        public Usuario Identificar(int id)
+        {
+            try
+            {
+                Usuario usuario = null;
+                Cmd.Connection = Con.ReturnConnection();//conexao
+                Cmd.CommandText = @"Select ID,
+                Nome,
+                Email,
+                Telefone,
+                Usuario,
+                Senha
+                From USUARIO WHERE ID = @id";
+                Cmd.Parameters.AddWithValue("@id", id);//passagem de parametro               
+                SqlDataReader rd = Cmd.ExecuteReader();
+
+                if (rd.Read())
+                {
+                    usuario = new Usuario((int)rd["ID"], (string)rd["Nome"], (string)rd["Email"], (string)rd["Telefone"], (string)rd["Usuario"], (string)rd["Senha"]);
+
+                }
+                return usuario;
+        
+            }
+            catch (Exception err)
+            {
+
+               throw new Exception(err.Message);
+            }
+            finally
+            {
+                Con.CloseConnection();
+            }
+
+        }
     }
 }

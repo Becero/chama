@@ -63,9 +63,9 @@ namespace chama {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pictureBox1_Image {
+        internal static System.Drawing.Bitmap pbLogo_Image {
             get {
-                object obj = ResourceManager.GetObject("pictureBox1.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("pbLogo.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -46,6 +46,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -114,7 +115,8 @@
             // segurançaToolStripMenuItem
             // 
             this.segurançaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatorioToolStripMenuItem});
+            this.relatorioToolStripMenuItem,
+            this.alterarSenhaToolStripMenuItem});
             this.segurançaToolStripMenuItem.Name = "segurançaToolStripMenuItem";
             this.segurançaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.segurançaToolStripMenuItem.Text = "Segurança";
@@ -122,7 +124,7 @@
             // relatorioToolStripMenuItem
             // 
             this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
-            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.relatorioToolStripMenuItem.Text = "Relatorio";
             // 
             // temaToolStripMenuItem
@@ -130,7 +132,6 @@
             this.temaToolStripMenuItem.Name = "temaToolStripMenuItem";
             this.temaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.temaToolStripMenuItem.Text = "Tema";
-            this.temaToolStripMenuItem.Click += new System.EventHandler(this.temaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -155,10 +156,11 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(79, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
@@ -168,7 +170,7 @@
             this.panel1.Controls.Add(this.btnVoltar);
             this.panel1.Location = new System.Drawing.Point(-1, 376);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 35);
+            this.panel1.Size = new System.Drawing.Size(245, 35);
             this.panel1.TabIndex = 21;
             // 
             // button3
@@ -199,6 +201,13 @@
             this.btnVoltar.Text = "◀";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // alterarSenhaToolStripMenuItem
+            // 
+            this.alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
+            this.alterarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
+            this.alterarSenhaToolStripMenuItem.Click += new System.EventHandler(this.alterarSenhaToolStripMenuItem_Click);
             // 
             // TelaPrincipal
             // 
@@ -242,5 +251,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.ToolStripMenuItem alterarSenhaToolStripMenuItem;
     }
 }

@@ -11,32 +11,30 @@ using System.Windows.Forms;
 
 namespace chama
 {
-    public partial class Form1 : Form
+    
+    public partial class TeladeLogin : Form
     {
-        public Form1()
+        public TeladeLogin()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            
             UsuarioDAO usuarioLogin = new UsuarioDAO();
             try
             {
-                if (usuarioLogin.Devolver(tbLogin.Text,txbSenha.Text))
+                int Id = usuarioLogin.Devolver(tbLogin.Text, txbSenha.Text);
+                if (Id != -1) 
                 {
                     MessageBox.Show("SUCESSO!", "Você foi Logado com sucesso", MessageBoxButtons.OK);
-                    this.Visible = false;
-                    TelaPrincipal telaPrincipal = new TelaPrincipal();
+                    //Usuario login = usuarioLogin.Alterar(tbLogin.Text, txbSenha.Text);
+                   
 
-                    txbSenha.Clear();
-                    telaPrincipal.ShowDialog();
-                    this.Visible = true;
+                        TelaPrincipal telaPrincipal = new TelaPrincipal(Id);
+                        txbSenha.Clear();
+                        telaPrincipal.ShowDialog(); 
+                        this.Visible = true;
 
                 }
                 else
@@ -54,7 +52,7 @@ namespace chama
         private void button2_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Cadastro cadastro = new Cadastro();            
+            Cadastro cadastro = new Cadastro(-1);
             cadastro.ShowDialog();
             this.Visible = true;
         }
@@ -65,8 +63,8 @@ namespace chama
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {            
-                Application.Exit();
+        {
+            Application.Exit();
         }
     }
 }

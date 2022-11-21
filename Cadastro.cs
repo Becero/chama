@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,12 @@ namespace chama
 {
     public partial class Cadastro : Form
     {
-        public Cadastro()
+        private int Id;
+        public Cadastro(int id)
         {
             InitializeComponent();
+            Id = id;
+            
         }
         private void LimparCampos()// limpa os dados na tela, para poder prencher o proximo
         {
@@ -50,35 +54,20 @@ namespace chama
 
         private void Cadastro_Load(object sender, EventArgs e)
         {
-            
-
-        }               
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }              
-
-        private void Name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+            if(Id != -1)
+            {
+                UsuarioDAO identificar = new UsuarioDAO();
+                Usuario user = identificar.Identificar(Id);
+                txbNome.Text = user.Nome;
+                txbEmail.Text = user.Email;
+                txbTelefone.Text = user.Telefone;
+                txbUsuario.Text = user.UsuarioSis;
+                lbSenha.Visible = false;
+                txbSenha.Visible = false;
+                groupBox1.Visible = true;
+                
+            }
+        }       
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -88,21 +77,65 @@ namespace chama
         {
             this.Close();
         }
+       
+        private void txbUsuario_Enter(object sender, EventArgs e)
+        {
+            if(txbUsuario.Text.Equals("Usuario"))
+            {
+                txbUsuario.Text = "\0";              
+            }
+            //else(txbUsuario)
+           
+        }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void txbSenha_Enter(object sender, EventArgs e)
+        {
+            if (txbSenha.Text.Equals("Senha"))
+            {
+                txbSenha.Text = "\0";
+            }
+        }
+
+        private void txbNome_Enter(object sender, EventArgs e)
+        {
+            if (txbNome.Text.Equals("Nome Completo"))
+            {
+                txbNome.Text = "\0";
+            }
+        }
+       
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void txbNome_Enter_1(object sender, EventArgs e)
+        {
+            if (txbSenha.Text.Equals("Senha"))
+            {
+                txbSenha.Text = "\0";
+            }
+        }
+
+        private void txbSenha_Enter_1(object sender, EventArgs e)
+        {
+            if (txbSenha.Text.Equals("Senha"))
+            {
+                txbSenha.Text = "\0";
+            }
+        }
+
+        private void txbUsuario_Enter_1(object sender, EventArgs e)
+        {
+            if (txbUsuario.Text.Equals("Usuario"))
+            {
+                txbUsuario.Text = "\0";
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
-        private void txbEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txbTelefone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
