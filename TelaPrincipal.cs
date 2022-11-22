@@ -83,5 +83,11 @@ namespace chama
                 */
             }
         }
+
+        private void temaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Black;
+            pictureBox1.BackColor = Color.White;
+        }
     }
 }
