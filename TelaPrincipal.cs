@@ -88,6 +88,7 @@ namespace chama
         {
             BackColor = Color.Black;
             pictureBox1.BackColor = Color.White;
+            //teste de cor
         }
     }
 }
