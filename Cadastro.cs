@@ -64,7 +64,8 @@ namespace chama
                 txbUsuario.Text = user.UsuarioSis;
                 lbSenha.Visible = false;
                 txbSenha.Visible = false;
-                groupBox1.Visible = true;
+                Endereço.Visible = true;
+                Sobre.Visible = true;
                 
             }
         }       
@@ -134,6 +135,21 @@ namespace chama
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usuario_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

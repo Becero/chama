@@ -69,5 +69,15 @@ namespace chama {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Point semelhante a {X=17,Y=17}.
+        /// </summary>
+        internal static System.Drawing.Point timer1_TrayLocation {
+            get {
+                object obj = ResourceManager.GetObject("timer1.TrayLocation", resourceCulture);
+                return ((System.Drawing.Point)(obj));
+            }
+        }
     }
 }
