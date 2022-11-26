@@ -40,6 +40,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Sobre = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -71,8 +73,6 @@
             this.txbUsuario = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.txbNome = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.botoes.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -192,6 +192,23 @@
             this.Sobre.Visible = false;
             this.Sobre.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Ramo de Atuação";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(2, 158);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(207, 40);
+            this.textBox1.TabIndex = 24;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -301,7 +318,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 175);
+            this.label7.Location = new System.Drawing.Point(6, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 13);
             this.label7.TabIndex = 11;
@@ -309,15 +326,16 @@
             // 
             // txbCEP
             // 
-            this.txbCEP.Location = new System.Drawing.Point(5, 191);
+            this.txbCEP.Location = new System.Drawing.Point(5, 35);
             this.txbCEP.Name = "txbCEP";
             this.txbCEP.Size = new System.Drawing.Size(141, 20);
             this.txbCEP.TabIndex = 10;
+            this.txbCEP.Leave += new System.EventHandler(this.txbCEP_Leave);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 136);
+            this.label6.Location = new System.Drawing.Point(5, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 9;
@@ -325,7 +343,7 @@
             // 
             // txbBairro
             // 
-            this.txbBairro.Location = new System.Drawing.Point(5, 152);
+            this.txbBairro.Location = new System.Drawing.Point(4, 190);
             this.txbBairro.Name = "txbBairro";
             this.txbBairro.Size = new System.Drawing.Size(141, 20);
             this.txbBairro.TabIndex = 8;
@@ -333,7 +351,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 97);
+            this.label5.Location = new System.Drawing.Point(6, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 7;
@@ -341,7 +359,7 @@
             // 
             // txbComplemento
             // 
-            this.txbComplemento.Location = new System.Drawing.Point(5, 113);
+            this.txbComplemento.Location = new System.Drawing.Point(5, 151);
             this.txbComplemento.Name = "txbComplemento";
             this.txbComplemento.Size = new System.Drawing.Size(141, 20);
             this.txbComplemento.TabIndex = 6;
@@ -349,7 +367,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 58);
+            this.label4.Location = new System.Drawing.Point(6, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 5;
@@ -359,7 +377,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Location = new System.Drawing.Point(6, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 4;
@@ -367,14 +385,14 @@
             // 
             // txbNumero
             // 
-            this.txbNumero.Location = new System.Drawing.Point(5, 74);
+            this.txbNumero.Location = new System.Drawing.Point(5, 113);
             this.txbNumero.Name = "txbNumero";
             this.txbNumero.Size = new System.Drawing.Size(141, 20);
             this.txbNumero.TabIndex = 3;
             // 
             // txbRua
             // 
-            this.txbRua.Location = new System.Drawing.Point(5, 35);
+            this.txbRua.Location = new System.Drawing.Point(5, 74);
             this.txbRua.Name = "txbRua";
             this.txbRua.Size = new System.Drawing.Size(141, 20);
             this.txbRua.TabIndex = 2;
@@ -473,23 +491,6 @@
             this.txbNome.TabIndex = 2;
             this.txbNome.Text = "Nome Completo";
             this.txbNome.Enter += new System.EventHandler(this.txbNome_Enter_1);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(2, 158);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 40);
-            this.textBox1.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Ramo de Atuação";
             // 
             // Cadastro
             // 

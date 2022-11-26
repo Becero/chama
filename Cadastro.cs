@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace chama
 {
+    
     public partial class Cadastro : Form
     {
         private int Id;
@@ -152,6 +153,42 @@ namespace chama
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txbCEP_Leave(object sender, EventArgs e)
+        {
+
+            if (!string.IsNullOrWhiteSpace(txbCEP.Text))
+            {
+                using (var ws = new WSCorreios.AtendeClienteClient())
+                {
+                    try
+                    {
+
+                        var endereco = ws.consultaCEP(txbCEP.Text.Trim());
+
+                        txbEstado.Text = endereco.uf;
+                        txbCidade.Text = endereco.cidade;
+                        txbBairro.Text = endereco.bairro;
+                        txbRua.Text = endereco.end;
+                        //txbComplemento = endereco.complemento2;
+
+                        /*else
+                        {
+                        MessageBox.Show("Cep não localizado...");
+                     }*/
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Informe um CEP válido");
+            }
+            
         }
     }
 }
