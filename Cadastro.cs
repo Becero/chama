@@ -179,7 +179,8 @@ namespace chama
                      }*/
                     }
                     catch (Exception ex)
-                    {
+
+                    {//teste
                         MessageBox.Show(ex.Message);
                     }
                 }
