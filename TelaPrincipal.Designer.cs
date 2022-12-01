@@ -79,11 +79,11 @@
             this.btnMenu,
             this.toolStripMenuItem1});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.menuStrip1.Location = new System.Drawing.Point(66, 12);
+            this.menuStrip1.Location = new System.Drawing.Point(186, 12);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(178, 23);
+            this.menuStrip1.Size = new System.Drawing.Size(58, 23);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,8 +94,8 @@
             this.notificaçõesToolStripMenuItem,
             this.segurançaToolStripMenuItem,
             this.temaToolStripMenuItem,
-            this.sairToolStripMenuItem,
-            this.ajudaToolStripMenuItem});
+            this.ajudaToolStripMenuItem,
+            this.sairToolStripMenuItem});
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(30, 19);
             this.btnMenu.Text = "☰";
@@ -133,7 +133,7 @@
             // alterarSenhaToolStripMenuItem
             // 
             this.alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
-            this.alterarSenhaToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.alterarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
             this.alterarSenhaToolStripMenuItem.Click += new System.EventHandler(this.alterarSenhaToolStripMenuItem_Click);
             // 

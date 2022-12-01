@@ -73,6 +73,7 @@
             this.txbUsuario = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.txbNome = new System.Windows.Forms.TextBox();
+            this.DesativaPerfil = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.botoes.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -175,6 +176,7 @@
             // 
             // Sobre
             // 
+            this.Sobre.Controls.Add(this.DesativaPerfil);
             this.Sobre.Controls.Add(this.label1);
             this.Sobre.Controls.Add(this.textBox1);
             this.Sobre.Controls.Add(this.label12);
@@ -183,9 +185,9 @@
             this.Sobre.Controls.Add(this.label11);
             this.Sobre.Controls.Add(this.textBox2);
             this.Sobre.Controls.Add(this.textBox4);
-            this.Sobre.Location = new System.Drawing.Point(7, 220);
+            this.Sobre.Location = new System.Drawing.Point(7, 527);
             this.Sobre.Name = "Sobre";
-            this.Sobre.Size = new System.Drawing.Size(215, 204);
+            this.Sobre.Size = new System.Drawing.Size(215, 220);
             this.Sobre.TabIndex = 25;
             this.Sobre.TabStop = false;
             this.Sobre.Text = "Sobre";
@@ -274,9 +276,9 @@
             this.Endereço.Controls.Add(this.label3);
             this.Endereço.Controls.Add(this.txbNumero);
             this.Endereço.Controls.Add(this.txbRua);
-            this.Endereço.Location = new System.Drawing.Point(7, 442);
+            this.Endereço.Location = new System.Drawing.Point(7, 221);
             this.Endereço.Name = "Endereço";
-            this.Endereço.Size = new System.Drawing.Size(215, 298);
+            this.Endereço.Size = new System.Drawing.Size(215, 300);
             this.Endereço.TabIndex = 24;
             this.Endereço.TabStop = false;
             this.Endereço.Text = "Endereço";
@@ -492,6 +494,17 @@
             this.txbNome.Text = "Nome Completo";
             this.txbNome.Enter += new System.EventHandler(this.txbNome_Enter_1);
             // 
+            // DesativaPerfil
+            // 
+            this.DesativaPerfil.AutoSize = true;
+            this.DesativaPerfil.Location = new System.Drawing.Point(64, 201);
+            this.DesativaPerfil.Name = "DesativaPerfil";
+            this.DesativaPerfil.Size = new System.Drawing.Size(78, 13);
+            this.DesativaPerfil.TabIndex = 16;
+            this.DesativaPerfil.TabStop = true;
+            this.DesativaPerfil.Text = "Desativar Perfil";
+            this.DesativaPerfil.Visible = false;
+            // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,5 +580,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.LinkLabel DesativaPerfil;
     }
 }

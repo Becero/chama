@@ -67,7 +67,10 @@ namespace chama
                 txbSenha.Visible = false;
                 Endereço.Visible = true;
                 Sobre.Visible = true;
-                
+                btnSalvar.Visible = false;
+                DesativaPerfil.Visible = true;
+
+
             }
         }       
         private void button4_Click(object sender, EventArgs e)
@@ -180,7 +183,7 @@ namespace chama
                     }
                     catch (Exception ex)
 
-                    {//teste
+                    {//teste2
                         MessageBox.Show(ex.Message);
                     }
                 }

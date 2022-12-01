@@ -29,12 +29,12 @@ namespace chama
                 {
                     MessageBox.Show("SUCESSO!", "Você foi Logado com sucesso", MessageBoxButtons.OK);
                     //Usuario login = usuarioLogin.Alterar(tbLogin.Text, txbSenha.Text);
-                   
 
-                        TelaPrincipal telaPrincipal = new TelaPrincipal(Id);
+                    this.Visible = false;
+                    TelaPrincipal telaPrincipal = new TelaPrincipal(Id);
                         txbSenha.Clear();
                         telaPrincipal.ShowDialog(); 
-                        this.Visible = true;
+                       
 
                 }
                 else
