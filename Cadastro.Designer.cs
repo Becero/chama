@@ -40,6 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Sobre = new System.Windows.Forms.GroupBox();
+            this.DesativaPerfil = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.txbUsuario = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.txbNome = new System.Windows.Forms.TextBox();
-            this.DesativaPerfil = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.botoes.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -194,21 +194,33 @@
             this.Sobre.Visible = false;
             this.Sobre.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // DesativaPerfil
+            // 
+            this.DesativaPerfil.AutoSize = true;
+            this.DesativaPerfil.Location = new System.Drawing.Point(64, 201);
+            this.DesativaPerfil.Name = "DesativaPerfil";
+            this.DesativaPerfil.Size = new System.Drawing.Size(78, 13);
+            this.DesativaPerfil.TabIndex = 16;
+            this.DesativaPerfil.TabStop = true;
+            this.DesativaPerfil.Text = "Desativar Perfil";
+            this.DesativaPerfil.Visible = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Ramo de Atuação";
+            this.label1.Text = "Sobre";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(2, 158);
+            this.textBox1.Location = new System.Drawing.Point(11, 158);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 40);
+            this.textBox1.Size = new System.Drawing.Size(198, 40);
             this.textBox1.TabIndex = 24;
             // 
             // label12
@@ -493,17 +505,6 @@
             this.txbNome.TabIndex = 2;
             this.txbNome.Text = "Nome Completo";
             this.txbNome.Enter += new System.EventHandler(this.txbNome_Enter_1);
-            // 
-            // DesativaPerfil
-            // 
-            this.DesativaPerfil.AutoSize = true;
-            this.DesativaPerfil.Location = new System.Drawing.Point(64, 201);
-            this.DesativaPerfil.Name = "DesativaPerfil";
-            this.DesativaPerfil.Size = new System.Drawing.Size(78, 13);
-            this.DesativaPerfil.TabIndex = 16;
-            this.DesativaPerfil.TabStop = true;
-            this.DesativaPerfil.Text = "Desativar Perfil";
-            this.DesativaPerfil.Visible = false;
             // 
             // Cadastro
             // 
